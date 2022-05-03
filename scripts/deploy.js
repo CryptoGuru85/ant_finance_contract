@@ -39,12 +39,12 @@ async function main() {
   
   const _OUTPUTTOLP1ROUTE = ["0x531780face85306877d7e1f05d713d1b50a37f7a"]
   
-  const CronosNft = await hre.ethers.getContractFactory("CronosNft");
-  const cronosNft = await CronosNft.deploy(_WANT, _POOLID, _CHEF, _VAULT, _UNIROUTER, _KEEPER, _STRATEGIST, _BEEFYFEERECIPIENT, _OUTPUTTONATIVEROUTE, _OUTPUTTOLP0ROUTE, _OUTPUTTOLP1ROUTE  );
+  const StrategyCommonChefLPBsc = await hre.ethers.getContractFactory("StrategyCommonChefLPBsc");
+  const Strategy = await StrategyCommonChefLPBsc.deploy(_WANT, _POOLID, _CHEF, _VAULT, _UNIROUTER, _KEEPER, _STRATEGIST, _BEEFYFEERECIPIENT, _OUTPUTTONATIVEROUTE, _OUTPUTTOLP0ROUTE, _OUTPUTTOLP1ROUTE  );
 
-  await cronosNft.deployed();
+  await Strategy.deployed();
 
-  console.log("CronosNft deployed to:", cronosNft.address);
+  console.log("Strategy deployed to:", Strategy.address);
 
 }
 

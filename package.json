@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "npx hardhat run scripts/deploy.js --network testnet",
+    "deploy": "npx hardhat run scripts/deploy.js --network rinkeby",
     "deploy-main": "npx hardhat run scripts/deploy.js --network mainnet",
     "build": "hardhat compile",
     "test:light": "hardhat test",

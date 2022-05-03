@@ -31,7 +31,7 @@ contract StrategyCommonChefLPBsc is StrategyCommonChefLP, GasThrottler {
     _outputToNativeRoute,
     _outputToLp0Route,
     _outputToLp1Route
-  ) public {}
+  ) {}
 
   function harvest() external override whenNotPaused gasThrottle {
     _harvest(tx.origin);

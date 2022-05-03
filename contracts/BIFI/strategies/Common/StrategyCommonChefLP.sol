@@ -13,7 +13,7 @@ import "../../utils/StringUtils.sol";
 import "./StratManager.sol";
 import "./FeeManager.sol";
 
-contract StrategyCommonChefLP is StratManager, FeeManager {
+abstract contract StrategyCommonChefLP is StratManager, FeeManager {
   using SafeERC20 for IERC20;
   using SafeMath for uint256;
 
@@ -53,7 +53,7 @@ contract StrategyCommonChefLP is StratManager, FeeManager {
     address[] memory _outputToNativeRoute,
     address[] memory _outputToLp0Route,
     address[] memory _outputToLp1Route
-  ) StratManager(_keeper, _strategist, _unirouter, _vault, _beefyFeeRecipient) public {
+  ) StratManager(_keeper, _strategist, _unirouter, _vault, _beefyFeeRecipient)  {
     want = _want;
     poolId = _poolId;
     chef = _chef;
