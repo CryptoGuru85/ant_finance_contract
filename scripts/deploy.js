@@ -17,13 +17,30 @@ async function main() {
   console.log("====================================")
   console.log("Deploying smart contract now...");
   console.log("====================================");
-  // const name = "CronosNft";
-  // const symbol = "Camels";
-  // const baseURI = "https://gateway.pinata.cloud/ipfs/QmRYbBQvXzutXp1krFAWp5P9WtLQ6s5vLNrxbtBunb7ffU/";
-  const baseURI = "ipfs://QmY4eSHDbsvD7MfgYU3miYSxnNXkXQTrZ4xjUCLD8B6vES/";  
+  const _WANT = 0x54f9fe531224fa43feb218b20aba84d22a8fdc0c
+
+  const _POOLID = 4
+  
+  const _CHEF= 0x1083926054069aad75d7238e9b809b0ef9d94e5b
+  
+  const _VAULT= 0x4d574e560fc5c2dc8997c13e1a5eed1941df9914
+  
+  const _UNIROUTER= 0x10ed43c718714eb63d5aa57b78b54704e256024e
+  
+  const _KEEPER = 0x0d8e060ca2d847553ec14394ee6b304623e0d1d6
+  
+  const _STRATEGIST = 0x0d8e060ca2d847553ec14394ee6b304623e0d1d6
+  
+  const _BEEFYFEERECIPIENT = 0x0d8e060ca2d847553ec14394ee6b304623e0d1d6
+  
+  const _OUTPUTTONATIVEROUTE = ["0x531780face85306877d7e1f05d713d1b50a37f7a","0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c"]
+  
+  const _OUTPUTTOLP0ROUTE = ["0x531780face85306877d7e1f05d713d1b50a37f7a","0x522348779dcb2911539e76a1042aa922f9c47ee3"]
+  
+  const _OUTPUTTOLP1ROUTE = ["0x531780face85306877d7e1f05d713d1b50a37f7a"]
   
   const CronosNft = await hre.ethers.getContractFactory("CronosNft");
-  const cronosNft = await CronosNft.deploy(baseURI);
+  const cronosNft = await CronosNft.deploy(_WANT, _POOLID, _CHEF, _VAULT, _UNIROUTER, _KEEPER, _STRATEGIST, _BEEFYFEERECIPIENT, _OUTPUTTONATIVEROUTE, _OUTPUTTOLP0ROUTE, _OUTPUTTOLP1ROUTE  );
 
   await cronosNft.deployed();
 
